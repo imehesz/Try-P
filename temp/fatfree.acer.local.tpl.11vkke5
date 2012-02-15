@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo ($_html_title=F3::get('html_title')); ?></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/ui/style.css" rel="stylesheet">
+    <link href="/css/prettify.css" rel="stylesheet">
+
+    <script src="/js/jquery.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">Try-PHP.org</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <!-- <li class="active"><a href="#">Home</a></li> -->
+              <!-- <li><a href="#about">About</a></li> -->
+              <li><a href="/learn">Learn</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+			<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>What is PHP?</h3>
+		</div>
+		<div class="modal-body">
+				<p><strong>PHP</strong> (recursive acronym for <strong>PHP: Hypertext Preprocessor</strong>) is a widely-used open source general-purpose scripting language that is especially suited for web development and <strong>can be embedded into HTML</strong>.</p>
+				<h4>What can PHP do?</h4>
+				<p>
+						<ul>
+							<li>
+									<strong>Server-side scripting.</strong> This is the most traditional and main target field for PHP. You need three things to make this work. The PHP parser (CGI or server module), a web server and a web browser.
+							</li>
+
+							<li>
+									<strong>Command line scripting.</strong> You can make a PHP script to run it without any server or browser. You only need the PHP parser to use it this way.
+							</li>
+
+							<li>
+									<strong>Writing desktop applications.</strong> PHP is probably not the very best language to create a desktop application with a graphical user interface, but if you know PHP very well, and would like to use some advanced PHP features in your client-side applications you can also use PHP-GTK to write such programs.
+							</li>
+						</ul>
+				</p>
+
+				<p>
+					You can read more at 
+						<a href="http://www.php.net/manual/en/intro-whatis.php" target="_blank">What is PHP?</a> and 
+						<a href="http://www.php.net/manual/en/intro-whatcando.php" target="_blank">What can PHP do?</a>
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<!-- <a href="#" data-dismiss="modal" class="btn">Close</a> -->
+
+				<?php if (($_lesson_next=F3::get('lesson_next'))): ?>
+					<a href="<?php echo $_lesson_next; ?>" class="btn btn-primary">Next</a>
+				<?php endif; ?>
+
+				<?php if (($_lesson_prev=F3::get('lesson_prev'))): ?>
+					<a href="<?php echo $_lesson_prev; ?>" class="btn btn-primary">Previous</a>
+				<?php endif; ?>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>
+
+
+<?php if (($_lesson=F3::get('lesson'))): ?>
+	
+	
+	<?php else: ?>
+		<div class="hero-unit">
+			<h1>Learn</h1>
+			<p></p>
+			<p>
+				Type your <strong>PHP</strong> code into <strong>Mr. Editor</strong> below and see the magic happen when you click on the <strong>`RUN CODE`</strong> button.<br />
+				<small>Tip: You can also use <strong>Ctrl + Enter</strong> to submit your code!</small>
+			</p>
+			<p>
+				<a href="/learn/lesson/1" class="btn btn-primary btn-large">Start Your First Lesson</a>
+			</p>
+		</div>
+	
+<?php endif; ?>
+
+<div style="margin-left:-20px;">
+		<iframe src="/editor" frameborder="0" class="span12" height="500px"></iframe>
+</div>
+
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+        <div class="span4">
+          <h2>Heading</h2>
+           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+       </div>
+        <div class="span4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn" href="#">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Try-PHP.org - <?php echo date('Y'); ?></p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/bootstrap-transition.js"></script>
+    <script src="/js/bootstrap-alert.js"></script>
+    <script src="/js/bootstrap-modal.js"></script>
+    <script src="/js/bootstrap-dropdown.js"></script>
+    <script src="/js/bootstrap-scrollspy.js"></script>
+    <script src="/js/bootstrap-tab.js"></script>
+    <script src="/js/bootstrap-tooltip.js"></script>
+    <script src="/js/bootstrap-popover.js"></script>
+    <script src="/js/bootstrap-button.js"></script>
+    <script src="/js/bootstrap-collapse.js"></script>
+    <script src="/js/bootstrap-carousel.js"></script>
+    <script src="/js/bootstrap-typeahead.js"></script>
+    <script src="/js/prettify.js"></script>
+  </body>
+</html>
+

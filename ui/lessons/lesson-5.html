@@ -1,0 +1,59 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Booleans</h3>
+		</div>
+		<div class="modal-body">
+				<p>
+					Boolean is the simpliest type of variable. It expresses a truth value. It can be either <b>TRUE</b> or <b>FALSE</b>.
+				</p>
+
+				<h4>How to use?</h4>
+
+				<p>
+				</p>
+<pre class="prettyprint">
+$foo = true;
+</pre>
+				<p>
+					In PHP the following values interpreted as <b>FALSE</b>:
+					<ul>
+						<li> <b>boolean</b> <i>false</i> </li>
+						<li> <b>integer</b> <i>0</i> </li>
+						<li> <b>float</b> <i>0.0</i> </li>
+						<li> empty <b>string</b> <i>""</i> and string zero <i>"0"</i></li>
+						<li> an <b>array</b> with <i>0</i> elements </li>
+						<li> a special type, <b>NULL</b></li>
+					</ul>
+				</p>
+
+				<p>
+					You can read more at 
+						<a href="http://www.php.net/manual/en/language.types.boolean.php" target="_blank">Boolean Type</a>. 
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">Try code</a>
+				<F3::check if="{{@lesson_next}}">
+					<F3:true>
+						<a href="{{@lesson_next}}" class="btn btn-primary">Next</a>
+					</F3:true>
+				</F3:check>
+				<F3::check if="{{@lesson_prev!=null}}">
+					<F3:true>
+						<a href="{{@lesson_prev}}" class="btn btn-primary">Previous</a>
+					</F3:true>
+				</F3:check>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>

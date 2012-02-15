@@ -1,0 +1,55 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Numbers</h3>
+		</div>
+		<div class="modal-body">
+				<p>As you learned from the previous lesson how to print something to the screen, let's try to do something useful. For example add two numbers together.</p>
+<pre class="prettyprint">
+echo 7+2; // 9
+</pre>
+				<p>
+					Of course other math related operations are working too like 3-1, 5/10 or 7*8. You can use more complex formulas as well. 
+				</p>
+<pre class="prettyprint">
+echo ( 1+2*(1+1)/4 ); // use the code editor to find out :P
+</pre>
+				<h4>Other Math functions</h4>
+				<p></p>
+				<p>
+					There are also a number of other <i>functions</i> you can use. For example to <b>get the square root of a number</b> you would use:
+<pre class="prettyprint">
+echo sqrt(9); // 3
+</pre>
+				</p>
+
+				<p>
+					You can read more at 
+						<a href="http://www.w3schools.com/php/php_ref_math.asp" target="_blank">PHP Math functions</a>.
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">Try code</a>
+				<F3::check if="{{@lesson_next}}">
+					<F3:true>
+						<a href="{{@lesson_next}}" class="btn btn-primary">Next</a>
+					</F3:true>
+				</F3:check>
+				<F3::check if="{{@lesson_prev!=null}}">
+					<F3:true>
+						<a href="{{@lesson_prev}}" class="btn btn-primary">Previous</a>
+					</F3:true>
+				</F3:check>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>

@@ -1,0 +1,23 @@
+<F3:include href="{{@lesson}}"/>
+
+<F3:check if="{{@lesson}}">
+	<F3:true>
+	</F3:true>
+	<F3:false>
+		<div class="hero-unit">
+			<h1>Learn</h1>
+			<p></p>
+			<p>
+				Type your <strong>PHP</strong> code into <strong>Mr. Editor</strong> below and see the magic happen when you click on the <strong>`RUN CODE`</strong> button.<br />
+				<small>Tip: You can also use <strong>Ctrl + Enter</strong> to submit your code!</small>
+			</p>
+			<p>
+				<a href="/learn/lesson/1" class="btn btn-primary btn-large">Start Your First Lesson</a>
+			</p>
+		</div>
+	</F3:false>
+</F3:check>
+
+<div style="margin-left:-20px;">
+		<iframe src="/editor" frameborder="0" class="span12" height="500px"></iframe>
+</div>

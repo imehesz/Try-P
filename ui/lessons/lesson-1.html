@@ -1,0 +1,53 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>What is PHP?</h3>
+		</div>
+		<div class="modal-body">
+				<p><strong>PHP</strong> (recursive acronym for <strong>PHP: Hypertext Preprocessor</strong>) is a widely-used open source general-purpose scripting language that is especially suited for web development and <strong>can be embedded into HTML</strong>.</p>
+				<h4>What can PHP do?</h4>
+				<p>
+						<ul>
+							<li>
+									<strong>Server-side scripting.</strong> This is the most traditional and main target field for PHP. You need three things to make this work. The PHP parser (CGI or server module), a web server and a web browser.
+							</li>
+
+							<li>
+									<strong>Command line scripting.</strong> You can make a PHP script to run it without any server or browser. You only need the PHP parser to use it this way.
+							</li>
+
+							<li>
+									<strong>Writing desktop applications.</strong> PHP is probably not the very best language to create a desktop application with a graphical user interface, but if you know PHP very well, and would like to use some advanced PHP features in your client-side applications you can also use PHP-GTK to write such programs.
+							</li>
+						</ul>
+				</p>
+
+				<p>
+					You can read more at 
+						<a href="http://www.php.net/manual/en/intro-whatis.php" target="_blank">What is PHP?</a> and 
+						<a href="http://www.php.net/manual/en/intro-whatcando.php" target="_blank">What can PHP do?</a>
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<!-- <a href="#" data-dismiss="modal" class="btn">Close</a> -->
+
+				<F3:check if="{{@lesson_next}}">
+					<a href="{{@lesson_next}}" class="btn btn-primary">Next</a>
+				</F3:check>
+
+				<F3:check if="{{@lesson_prev}}">
+					<a href="{{@lesson_prev}}" class="btn btn-primary">Previous</a>
+				</F3:check>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>
