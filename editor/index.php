@@ -74,6 +74,7 @@ if (isset($_POST['code'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Debug Console</title>
         <link rel="stylesheet" type="text/css" href="styles.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
         <script src="jquery-1.7.1.min.js"></script>
         <script src="ace/ace.js"></script>
         <script src="ace/mode-php.js"></script>
@@ -85,12 +86,13 @@ if (isset($_POST['code'])) {
         </script>
     </head>
     <body>
+		<hr />
         <form method="POST" action="">
             <div class="input">
                 <textarea style="overflow:hidden;" class="editor" id="editor" name="code"><?php echo (isset($_POST['code']) ? htmlentities($_POST['code'], ENT_QUOTES, 'UTF-8') : null) ?></textarea>
 				<div class="output"><?php echo $debugOutput ?></div>
 				<div style="clear:both;"></div>
-                <div class="statusbar">
+                <div class="statusbar" style="display:none;">
                     <span style="display:none;" class="position">Line: 1, Column: 1</span>
                     <span class="copy">
                         Copy selection: <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="110" height="14" id="clippy">
@@ -115,8 +117,12 @@ if (isset($_POST['code'])) {
                     </span>
                 </div>
             </div>
-            <input type="submit" name="subm" value="Run Code!" style="width:200px;"/>
+			<div style="text-align:center;">
+				<input type="submit" name="subm" value="RUN CODE!" class="btn btn-primary" />
+			</div>
         </form>
+
+		<hr />
 
 		<?php /*
         <div class="help">

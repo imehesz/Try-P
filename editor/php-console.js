@@ -85,6 +85,7 @@
             .text(code);
 
         editor = ace.edit(options.editor);
+		//editor.renderer.setShowGutter(false);
 
         // set mode
         PhpMode = require("ace/mode/php").Mode;

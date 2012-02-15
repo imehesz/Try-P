@@ -33,12 +33,11 @@ a {
 .output {
     padding: 5px 10px;
     /*margin: 10px;*/
-	width: 200px;
 	float: right;
 	width: 46%;
 	overflow: hidden;
 	/*max-height: 365px;*/
-	height: 400px;
+	height: 390px;
 	background-color: #FCF8E3;
 	color: #C09853;
 }
