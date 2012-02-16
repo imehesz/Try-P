@@ -18,9 +18,30 @@ $options = array(
  *
  * Source on Github http://github.com/Seldaek/php-console
  */
+
+/*
+// removed security, we should be good to go now ...
 if (!in_array($_SERVER['REMOTE_ADDR'], array('127.0.0.1', '::1'), true)) {
     header('HTTP/1.1 401 Access unauthorized');
     die('ERR/401 Go Away');
+}
+*/
+
+function contains_weird_code( $code )
+{
+	$black_list = array( 'system', 'exec', 'basename', 'chgrp', 'chmod', 'chown', 'clearstatcache', 'copy', 'delete', 'dirname', 'disk_free_space', 'disk_total_space', 'diskfreespace', 'fclose', 'feof', 'fflush', 'fgetc', 'fgetcsv', 'fgets', 'fgetss', 'file_exists', 'file_get_contents', 'file_put_contents', 'file', 'fileatime', 'filectime', 'filegroup', 'fileinode', 'filemtime', 'fileowner', 'fileperms', 'filesize', 'filetype', 'flock', 'fnmatch', 'fopen', 'fpassthru', 'fputcsv', 'fputs', 'fread', 'fscanf', 'fseek', 'fstat', 'ftell', 'ftruncate', 'fwrite', 'glob', 'is_dir', 'is_executable', 'is_file', 'is_link', 'is_readable', 'is_uploaded_file', 'is_writable', 'is_writeable', 'lchgrp', 'lchown', 'link', 'linkinfo', 'lstat', 'mkdir', 'move_uploaded_file', 'parse_ini_file', 'parse_ini_string', 'phpinfo', 'pathinfo', 'pclose', 'popen', 'readfile', 'readlink', 'realpath_cache_get', 'realpath_cache_size', 'realpath', 'rename', 'rewind', 'rmdir', 'set_file_buffer', 'stat', 'symlink', 'tempnam', 'tmpfile', 'touch', 'unmask', 'unlink' );
+
+	// first off, let's remove ALL spaces
+	$code = str_replace( ' ', '', $code );
+	foreach( $black_list as $word )
+	{
+		if( stristr( $code, $word . '(' ) )
+		{
+			return true;
+		}
+	}
+
+	return false;
 }
 
 define('PHP_CONSOLE_VERSION', '1.3.0-dev');
@@ -34,6 +55,11 @@ $debugOutput = '';
 
 if (isset($_POST['code'])) {
     $code = $_POST['code'];
+
+	if( contains_weird_code( $code ) )
+	{
+		$code='echo "Oops, something bad was about to happen ... Please try again.";';
+	}
 
     if (get_magic_quotes_gpc()) {
         $code = stripslashes($code);
@@ -61,6 +87,14 @@ if (isset($_POST['code'])) {
 
     if (isset($_GET['js'])) {
         header('Content-Type: text/plain');
+		$eval_pos = strpos( $debugOutput, 'eval' );
+
+		if( $eval_pos )
+		{
+			$debugOutput = substr( $debugOutput, 0, $eval_pos );
+			$debugOutput = str_replace( dirname( __FILE__ ) . '/index.php', '', $debugOutput ) ;
+		}
+
         echo $debugOutput;
         die('#end-php-console-output#');
     }
