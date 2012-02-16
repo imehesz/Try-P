@@ -117,8 +117,8 @@ if (isset($_POST['code'])) {
                     </span>
                 </div>
             </div>
-			<div style="text-align:center;">
-				<input type="submit" name="subm" value="RUN CODE!" class="btn btn-primary" />
+			<div style="text-align:center;margin-top:10px;">
+				<input type="submit" name="subm" value="SHOW ME THE MAGIC!" class="btn btn-primary" />
 			</div>
         </form>
 

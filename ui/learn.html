@@ -2,12 +2,16 @@
 
 <F3:check if="{{@lesson}}">
 	<F3:true>
-		<div class="span4">
-			<a href="javascript:void(0);" onClick="javascript:$('#mymodal').modal();"><img src="/images/mr-editor.png" border="0"/></a>
+		<div class="span2">
+			<a href="javascript:void(0);" onClick="javascript:$('#mymodal').modal();">
+				<img title="Hello, my name is elePHPant!" src="/images/elephpant_small.png" border="0"/>
+			</a>
 			<p>
-			<small>Click on Mr. Editor to show <br />
-			you the current lesson ;)</small>
+				<small>Click on the <strong>elePHPant</strong> to display the current lesson ;)</small>
 			</p>
+		</div>
+		<div class="span9">
+		aaaaaaaaaaaaaa
 		</div>
 	</F3:true>
 	<F3:false>
@@ -15,8 +19,8 @@
 			<h1>Learn</h1>
 			<p></p>
 			<p>
-				Type your <strong>PHP</strong> code into <strong>Mr. Editor</strong> below and see the magic happen when you click on the <strong>`RUN CODE`</strong> button.<br />
-				<small>Tip: You can also use <strong>Ctrl + Enter</strong> to submit your code!</small>
+				Type your <strong>PHP</strong> code into <strong>Mr. Editor</strong> below and see the magic happen when you click on the ... <strong>`SHOW ME THE MAGIC!`</strong> button.<br />
+				<small>Tip: You can also use <strong>Ctrl + Enter</strong> to wave your wand ... you know, for the magic.</small>
 			</p>
 			<p>
 				<a href="/learn/lesson/1" class="btn btn-primary btn-large">Start Your First Lesson</a>
@@ -26,5 +30,9 @@
 </F3:check>
 
 <div style="margin-left:-20px;">
-		<iframe overflow="hidden" src="/editor" frameborder="0" class="span12" height="530px"></iframe>
+		<iframe name="aniframe" overflow="hidden" src="/editor" frameborder="0" class="span12" height="530px"></iframe>
 </div>
+
+<script language="javascript">
+		document.getElementsByName("aniframe")[0].contentWindow.document.body.focus();
+</script>
