@@ -2,6 +2,7 @@
 
 <F3:check if="{{@lesson}}">
 	<F3:true>
+		<!--
 		<div class="span2">
 			<a href="javascript:void(0);" onClick="javascript:$('#mymodal').modal();">
 				<img title="Hello, my name is elePHPant!" src="/images/elephpant_small.png" border="0"/>
@@ -11,7 +12,18 @@
 			</p>
 		</div>
 		<div class="span9">
-		aaaaaaaaaaaaaa
+		</div>
+		-->
+		<div class="span12" style="text-align:center;">
+				<F3:check if="{{@lesson_prev}}">
+					<a href="{{@lesson_prev}}" class="btn btn-success">< Previous lesson</a>
+				</F3:check>
+
+				<a href="javascript:void(0);" onclick="$('#mymodal').modal();" class="btn">Show me this lesson again</a>
+	
+				<F3:check if="{{@lesson_next}}">
+					<a href="{{@lesson_next}}" class="btn btn-success">Show me the next lesson ></a>
+				</F3:check>
 		</div>
 	</F3:true>
 	<F3:false>

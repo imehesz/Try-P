@@ -1,34 +1,29 @@
 <div class="modal fade" id="mymodal" style="display:none;">
 		<div class="modal-header">
 				<a class="close" data-dismiss="modal">×</a>
-				<h3>8</h3>
+				<h3>Arrays I.</h3>
 		</div>
 		<div class="modal-body">
 				<p>
-					An <b>integer is a number</b> of the set ℤ = {..., -2, -1, 0, 1, 2, ...}</b>. Integers can be specified in decimal <i>(base 10)</i>, hexadecimal <i>(base 16)</i>, octal <i>(base 8)</i> or binary <i>(base 2)</i> notation, optionally preceded by a sign <i>(- or +)</i>.
+					An <strong>array type</strong> is a data type that is meant to describe a collection of elements <i>(values or variables)</i>, each selected by one or more indices <i>(identifying keys)</i> that can be computed at run time by the program. You're probably thinking ... <i>meh?</i>
 				</p>
 <pre class="prettyprint">
-$a = 1234;
-$a = -123;
-$a = 0123; // octal number!
-$a = 0x1A; // hexadecimal number!
+// set an array
+$arr = array( 'first_name' => 'Bela', 'last_name' => 'Lugosi' );
+$arr2 = array( 11,22,33,44 ); // keys will be: 0,1,2,3
+
+// print_r() displays information about a variable
+print_r( $arr ); // Array ( [first_name] => Bela ... )
+print_r( $arr2 ); // Array ( [0] => 11 [1] => 22 ... )
+
+// access a value within an array
+echo $arr['last_name']; // Lugosi
+echo $arr2[2]; // 33
 </pre>
 
-				<h4>Floating Doubles</h4>
-				<p>
-					Floating point numbers (also known as "floats", "doubles", or "real numbers") can be specified using any of the following syntaxes:
-				</p>
-				<p>
-				</p>
-<pre class="prettyprint">
-$a = 1.234;
-$b = 1.2e3;
-$c = 7E-10;
-</pre>
 				<p>
 					You can read more at 
-						<a href="http://www.php.net/manual/en/language.types.integer.php" target="_blank">Integers</a> and 
-						<a href="http://www.php.net/manual/en/language.types.float.php" target="_blank">Floating Point Numbers</a>.
+						<a href="http://php.net/manual/en/language.types.array.php" target="_blank">Arrays</a>.
 				</p>
 <!--
 <pre class="prettyprint">
@@ -38,16 +33,6 @@ echo 'heyooo';
 		</div>
 		<div class="modal-footer">
 				<a href="#" data-dismiss="modal" class="btn">Try code</a>
-				<F3::check if="{{@lesson_next}}">
-					<F3:true>
-						<a href="{{@lesson_next}}" class="btn btn-primary">Next</a>
-					</F3:true>
-				</F3:check>
-				<F3::check if="{{@lesson_prev!=null}}">
-					<F3:true>
-						<a href="{{@lesson_prev}}" class="btn btn-primary">Previous</a>
-					</F3:true>
-				</F3:check>
 		</div>
 </div> <!-- end modal -->
 <script>
