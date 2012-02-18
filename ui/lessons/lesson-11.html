@@ -1,34 +1,48 @@
 <div class="modal fade" id="mymodal" style="display:none;">
 		<div class="modal-header">
 				<a class="close" data-dismiss="modal">×</a>
-				<h3>11</h3>
+				<h3>If Then Else ... ElseIf</h3>
 		</div>
 		<div class="modal-body">
 				<p>
-					An <b>integer is a number</b> of the set ℤ = {..., -2, -1, 0, 1, 2, ...}</b>. Integers can be specified in decimal <i>(base 10)</i>, hexadecimal <i>(base 16)</i>, octal <i>(base 8)</i> or binary <i>(base 2)</i> notation, optionally preceded by a sign <i>(- or +)</i>.
+					<strong>IF</strong> statements are very simple. Well ... most of the time. They check if a certain  <b>condition</b> is <i>true</i> or <i>false</i> and execute a piece of code. Let's see an example:
 				</p>
 <pre class="prettyprint">
-$a = 1234;
-$a = -123;
-$a = 0123; // octal number!
-$a = 0x1A; // hexadecimal number!
+$a = 10;
+$b = 99;
+
+// if $a is larger than $b ...
+if( $a > $b ){
+  echo '$a is bigger!'; // say $a is bigger ...
+}
+else{
+  echo '$b is bigger'; // otherwise say $b is bigger
+}
 </pre>
 
-				<h4>Floating Doubles</h4>
 				<p>
-					Floating point numbers (also known as "floats", "doubles", or "real numbers") can be specified using any of the following syntaxes:
+					It's good so far but what happens if the two numbers are equal? Yes, it would still say that `$b is bigger` because our condition only checks <strong>if $a is larger than $b</strong>. Let's fix it:
 				</p>
 				<p>
 				</p>
 <pre class="prettyprint">
-$a = 1.234;
-$b = 1.2e3;
-$c = 7E-10;
+$a = 10;
+$b = 10;
+
+// if $a is larger than $b ...
+if( $a > $b ){
+  echo '$a is bigger!'; // say $a is bigger ...
+}
+elseif( $b > $a ){
+  echo '$b is bigger'; //  say $b is bigger
+}
+else{
+  echo '$a equals $b'; // otherwise say they are equal
+}
 </pre>
 				<p>
 					You can read more at 
-						<a href="http://www.php.net/manual/en/language.types.integer.php" target="_blank">Integers</a> and 
-						<a href="http://www.php.net/manual/en/language.types.float.php" target="_blank">Floating Point Numbers</a>.
+						<a href="http://www.php.net/manual/en/control-structures.elseif.php" target="_blank">If ElseIF</a>.
 				</p>
 <!--
 <pre class="prettyprint">

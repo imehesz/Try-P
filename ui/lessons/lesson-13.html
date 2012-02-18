@@ -1,0 +1,55 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>ARGH!!! MY HEAD IS EXPLODING!</h3>
+		</div>
+		<div class="modal-body">
+				<p>
+					Alright, with the knowledge we have so far, we should be able to do some cool stuff. Let's write a program that will select a secret number between 0 and 100 and find out what the number is programatically. 
+				</p>
+				<p>
+					A very simple solution would be to go through the numbers from 0 to 100, but it would not be effecient. There <strong>must be a better way</strong> ... and there is.
+				</p>
+<pre class="prettyprint">
+$secret_number = rand(0,100); // picking a secret number
+$tip = rand( 0,100 ); // we set the first tip
+$step = 1; // we wanna count how many steps it will take
+
+// we run this code block until we find the right number 
+while( $tip != $secret_number ){
+    if( $tip < $secret_number && $step < 100 )
+    {
+		$tip += round( (100-$tip)/2 );
+    }
+    else
+    {
+		$tip -= round( (100-$tip)/2 );
+    }
+    //$tip = rand( 0,100 );
+    $step++;
+}
+
+echo "YES! It took $step steps to find " . 
+     "the secret number: $secret_number!";
+</pre>
+
+				<p>
+					You can read more at 
+						<a href="http://www.php.net/manual/en/language.oop5.php" target="_blank">Classes and Objects</a>.
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">Try code</a>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>

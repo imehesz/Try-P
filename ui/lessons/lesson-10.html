@@ -1,34 +1,47 @@
 <div class="modal fade" id="mymodal" style="display:none;">
 		<div class="modal-header">
 				<a class="close" data-dismiss="modal">×</a>
-				<h3>10</h3>
+				<h3>Object</h3>
 		</div>
 		<div class="modal-body">
 				<p>
-					An <b>integer is a number</b> of the set ℤ = {..., -2, -1, 0, 1, 2, ...}</b>. Integers can be specified in decimal <i>(base 10)</i>, hexadecimal <i>(base 16)</i>, octal <i>(base 8)</i> or binary <i>(base 2)</i> notation, optionally preceded by a sign <i>(- or +)</i>.
+					Many many years ago developers felt like programming languages should feel more natural to humans and reflect "real life" better. So they came up with the term <strong>Object Oriented Programming or OOP</strong>. What is an object? Cars, books, animals, flowers are all objects. Simple, isn't it?
+				</p>
+				<p>
+					There are at least a zillion books there about <strong>OOP</strong> and it would be impossible to explain everything about objects here. In a tiny nutshell ...
 				</p>
 <pre class="prettyprint">
-$a = 1234;
-$a = -123;
-$a = 0123; // octal number!
-$a = 0x1A; // hexadecimal number!
+// defining classes ...
+class Vehicle{
+	public $name;
+	public $maker = 'Robots';
+	public $can_fly = false;
+	public $max_speed = 0;
+}
+
+class Car extends Vehicle{
+	public $max_speed = 200;
+}
+
+class Spaceship extends Vehicle{
+	public $maker = 'NASA';
+	public $can_fly = true;
+	public $max_speed = 43200;
+}
+
+// ... and our objects
+$voyager = new Spaceship();
+$focus = new Car();
+$focus->maker = 'Ford'; // updating properties
+
+// accessing properties
+echo $voyager->max_speed; // 43200
+echo $focus->maker; // Ford
 </pre>
 
-				<h4>Floating Doubles</h4>
-				<p>
-					Floating point numbers (also known as "floats", "doubles", or "real numbers") can be specified using any of the following syntaxes:
-				</p>
-				<p>
-				</p>
-<pre class="prettyprint">
-$a = 1.234;
-$b = 1.2e3;
-$c = 7E-10;
-</pre>
 				<p>
 					You can read more at 
-						<a href="http://www.php.net/manual/en/language.types.integer.php" target="_blank">Integers</a> and 
-						<a href="http://www.php.net/manual/en/language.types.float.php" target="_blank">Floating Point Numbers</a>.
+						<a href="http://www.php.net/manual/en/language.oop5.php" target="_blank">Classes and Objects</a>.
 				</p>
 <!--
 <pre class="prettyprint">

@@ -1,34 +1,59 @@
 <div class="modal fade" id="mymodal" style="display:none;">
 		<div class="modal-header">
 				<a class="close" data-dismiss="modal">×</a>
-				<h3>12</h3>
+				<h3>Snoop-a-LOOP ... a</h3>
 		</div>
 		<div class="modal-body">
 				<p>
-					An <b>integer is a number</b> of the set ℤ = {..., -2, -1, 0, 1, 2, ...}</b>. Integers can be specified in decimal <i>(base 10)</i>, hexadecimal <i>(base 16)</i>, octal <i>(base 8)</i> or binary <i>(base 2)</i> notation, optionally preceded by a sign <i>(- or +)</i>.
+					Loops are simply repeating code blocks a certain amount of time.
 				</p>
 <pre class="prettyprint">
-$a = 1234;
-$a = -123;
-$a = 0123; // octal number!
-$a = 0x1A; // hexadecimal number!
+// a for loop
+for( $cnt=0; $cnt<5; $cnt++ )
+{
+  echo 'XO'; // XOXOXOXOXO
+}
 </pre>
 
-				<h4>Floating Doubles</h4>
 				<p>
-					Floating point numbers (also known as "floats", "doubles", or "real numbers") can be specified using any of the following syntaxes:
+					At the beginning of the <strong>FOR</strong> loop we have a declaration, <strong>$cnt=0;</strong> the middle tells you how many times it's going to execute, while <strong>$cnt is smaller than 5</strong>, at last we simply increase the <strong>$cnt</strong> counter by one with `<strong>++</strong>`.
 				</p>
 				<p>
 				</p>
 <pre class="prettyprint">
-$a = 1.234;
-$b = 1.2e3;
-$c = 7E-10;
+// a foreach loop
+$poem = array( 'Listen to them...','children of the night.','What music they make!');
+foreach( $poem as $line ){
+    echo $line . '&lt;br /&gt;';
+}
+
+// or
+$employees = array(
+    'Renfield' => 44,
+    'John Harker' => 39,
+    'Dr. Seward' => 57
+);
+foreach( $employees as $name => $age ){
+    echo "Name:$name, Age: $age&lt;br /&gt;"; 
+    // note the usage of " quotes and variables within a string!
+}
+</pre>
+				<p>
+					As you can see a <strong>foreach loop</strong> is good to loop through array elements. You could use a regular <strong>for loop</strong> for most of the cases, foreach is more convenient and easier to read.
+				</p>
+<pre class="prettyprint">
+// a while loop
+$cnt = 0;
+while( $cnt < 10 ){
+    echo $cnt;
+    $cnt++;
+} // we print the value of $cnt until it reaches 9
 </pre>
 				<p>
 					You can read more at 
-						<a href="http://www.php.net/manual/en/language.types.integer.php" target="_blank">Integers</a> and 
-						<a href="http://www.php.net/manual/en/language.types.float.php" target="_blank">Floating Point Numbers</a>.
+						<a href="http://www.php.net/for" target="_blank">For</a>,
+						<a href="http://www.php.net/manual/en/control-structures.foreach.php" target="_blank">Foreach</a> and 
+						<a href="http://www.php.net/while" target="_blank">While</a>.  
 				</p>
 <!--
 <pre class="prettyprint">
