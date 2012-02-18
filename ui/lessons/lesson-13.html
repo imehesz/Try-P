@@ -5,38 +5,22 @@
 		</div>
 		<div class="modal-body">
 				<p>
-					Alright, with the knowledge we have so far, we should be able to do some cool stuff. Let's write a program that will select a secret number between 0 and 100 and find out what the number is programatically. 
-				</p>
-				<p>
-					A very simple solution would be to go through the numbers from 0 to 100, but it would not be effecient. There <strong>must be a better way</strong> ... and there is.
+					Alright, with the knowledge we have so far, we should be able to do some cool stuff. For example, let's add the numbers together from 1 to 100. (1+2+3+4+5+6 ... etc) 
 				</p>
 <pre class="prettyprint">
-$secret_number = rand(0,100); // picking a secret number
-$tip = rand( 0,100 ); // we set the first tip
-$step = 1; // we wanna count how many steps it will take
+$numbers = range(1,100); // $numbers, an array filled with 1,2,...,99,100
+$sum = 0;
 
-// we run this code block until we find the right number 
-while( $tip != $secret_number ){
-    if( $tip < $secret_number && $step < 100 )
-    {
-		$tip += round( (100-$tip)/2 );
-    }
-    else
-    {
-		$tip -= round( (100-$tip)/2 );
-    }
-    //$tip = rand( 0,100 );
-    $step++;
+foreach( $numbers as $number ){
+    $sum += $number; // same as $sum = $sum + $number
 }
 
-echo "YES! It took $step steps to find " . 
-     "the secret number: $secret_number!";
+echo $sum;
 </pre>
 
-				<p>
-					You can read more at 
-						<a href="http://www.php.net/manual/en/language.oop5.php" target="_blank">Classes and Objects</a>.
-				</p>
+			<p>
+				You can also add an extra parameter to the <strong>range()</strong> function to skip over to every second, third, fourth etc number. So it'd look like this <strong>range(1,100,2)</strong>. Give it a try.
+			</p>
 <!--
 <pre class="prettyprint">
 echo 'heyooo';

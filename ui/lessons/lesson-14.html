@@ -1,0 +1,51 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>Functions</h3>
+		</div>
+		<div class="modal-body">
+				<p>
+					You've been using <strong>PHP functions</strong> left and right so you might be wondering ... <br /><i>"Can I write my own functions!?"</i> - in short - <strong>YES, YOU CAN!</strong>
+				</p>
+
+				<p>
+					Hopefully you remember when in <a href="/learn/lesson/7">Lesson 7</a> we used two functions to reverse and make a string uppercase. It looked something like this: <strong>echo strrev( strtoupper( 'string' ) );</strong>. If we would like to do this many times in different parts of our code, it would be more convenient to just call one function instead ... 
+				</p>
+<pre class="prettyprint">
+// declaring a new function
+function revupper( $str ){
+    // we create a new value with the change string
+    $return_value = strrev( strtoupper( $str ) );
+    return $return_value; // we return the return_value ;)
+} 
+
+// or even better
+function better_revupper( $str ){
+    return strrev( strtoupper( $str ) );
+}
+
+// now let's test
+echo revupper( 'Bela' ); // ALEB
+echo better_revupper( 'Lugosi' ); // ISOGUL
+</pre>
+
+				<p>
+					You can read more at 
+						<a href="http://www.php.net/manual/en/functions.user-defined.php" target="_blank">User Defined Functions</a>.
+				</p>
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">Try code</a>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>

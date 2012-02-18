@@ -1,0 +1,56 @@
+<div class="modal fade" id="mymodal" style="display:none;">
+		<div class="modal-header">
+				<a class="close" data-dismiss="modal">×</a>
+				<h3>ARGH!!! MY HEAD IS EXPLODING! II.</h3>
+		</div>
+		<div class="modal-body">
+				<p>
+					Let's play with strings a little. How about creating a simple poem generator.
+				</p>
+				<p>
+				</p>
+<pre class="prettyprint">
+$words = array( 'Dracula', 'flies', 'bat', 'dawn', 'comes', 'night', 'child', 'faith', 'love', 'hearth', 'dog', 'dusk', 'from', 'the', 'egg', 'plastic', 'wings', 'flower', 'eat', 'drink', 'foolish', 'horse', 'dog', 'cat', 'plays', 'write', 'read', 'secret', 'star', 'darkness', 'young', 'today', 'yesterday', 'tomorrow', 'hear', 'funny', 'tree', 'under', 'honey', 'then', 'when', 'if', 'is' );
+
+$number_of_lines = 4;
+$number_of_words = 5;
+$number_of_blocks = 3;
+
+for( $block_cnt=0; $block_cnt < $number_of_blocks; $block_cnt++ ){
+    for( $line_cnt=0; $line_cnt < $number_of_lines; $line_cnt++ ){
+        for( $word_cnt=0; $word_cnt < $number_of_words; $word_cnt++ ){
+            echo $words[ rand( 0, sizeof( $words )-1 ) ] . ' ';
+        }
+        echo '&lt;br /&gt;';
+    }
+    echo '&lt;br /&gt;';
+}
+</pre>
+				<p>
+					So at first we <strong>fill an array with words</strong>, then we set some variables: how many blocks we would like to see, how many lines within a block and how many words within a line. Then we simply <strong>loop through</strong> each of these, and we <strong>print out a random word</strong>. When we hit the 5th word, we add a line break, when we finish a block, we add another line break for more space.
+				</p>
+
+				<p>
+					As an <strong>excersize</strong> you could add random punctuations here and there to make the poem more theatrical and maybe capitalize every blocks' first word's first letter. <br /><i>Hint:</i> use <strong>ucfirst( $word )</strong> to make the first letter upper-case. 
+				</p>
+
+				<p>
+					For extra kudos you can make sure that you only use a word once ;)
+				</p>
+
+<!--
+<pre class="prettyprint">
+echo 'heyooo';
+</pre>
+-->
+		</div>
+		<div class="modal-footer">
+				<a href="#" data-dismiss="modal" class="btn">Try code</a>
+		</div>
+</div> <!-- end modal -->
+<script>
+	$(document).ready( function(){
+			prettyPrint();
+			$('#mymodal').modal();
+	});
+</script>
