@@ -23,6 +23,14 @@ ul.front-ul li
 		display:none;
 	}
 }
+
+.mre-ads-nav
+{
+	text-align: center;
+	margin-top: 20px;
+	background: url( ../images/mre_ads_nav.png ) no-repeat left;
+}
+
 /*
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,
 p,blockquote,pre,a,abbr,acronym,address,big,code,em,img,
