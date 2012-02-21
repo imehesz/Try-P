@@ -120,8 +120,8 @@ if (isset($_POST['code'])) {
         </script>
     </head>
     <body>
-		<hr />
         <form method="POST" action="">
+			<br />
             <div class="input">
                 <textarea style="overflow:hidden;" class="editor" id="editor" name="code"><?php echo (isset($_POST['code']) ? htmlentities($_POST['code'], ENT_QUOTES, 'UTF-8') : null) ?></textarea>
 				<div class="output"><?php echo $debugOutput ?></div>
