@@ -1,12 +1,8 @@
 <?php
-
-error_reporting(E_ALL); 
-ini_set("display_errors", 1);
-
 $app = require __DIR__ . '/lib/base.php';
 
-$app->set('CACHE', false);
-$app->set('DEBUG',1);
+require_once( 'config.php' );
+
 $app->set('UI','ui/');
 
 $app->set( 'html_title', 'Try-PHP.org');
