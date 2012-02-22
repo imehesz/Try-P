@@ -38,7 +38,22 @@
 				<F3:check if="{{@lesson_next}}">
 					<a href="{{@lesson_next}}" class="btn btn-success">Show me the next lesson &raquo;</a>
 				</F3:check>
+
 		</div>
+
+		<div class="btn-group" style="float:right;margin-right:30px;margin-top:-27px;">
+			<a class="btn" href="#">Lessons</a>
+			<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu" style="margin-left:-180px;width:275px;max-width:275px;">
+				<!-- dropdown menu links -->
+				<F3:repeat group="{{@lessons}}" value="{{@lesson_id}}">
+					<li style="text-align:left;"><a href="/learn/lesson/{{@lesson_id}}">{{getTitle( @lesson_id )}}</a></li>
+				</F3:repeat>
+			</ul>
+		</div>
+
 	</F3:true>
 	<F3:false>
 		<div class="hero-unit">
