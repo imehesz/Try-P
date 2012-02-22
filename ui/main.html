@@ -73,7 +73,7 @@
 					<li><a target="_blank" href="http://yahoo.com">Yahoo!</a></li>
 				</ul>
 		   </p>
-          <p><a class="btn" target="_blank" href="http://en.wikipedia.org/wiki/PHP">Read More</a></p>
+          <p><a class="btn" target="_blank" href="http://en.wikipedia.org/wiki/PHP">Read More &raquo;</a></p>
         </div>
         <div class="span4">
 			<script type="text/javascript"><!--
@@ -108,7 +108,25 @@
       <hr>
 
       <footer>
-        <p>&copy; <a href="http://Try-PHP.org">Try-PHP.org</a> - {{date('Y')}} <small>- inspired by <a href="http://tryruby.org/" target="_blank">TryRuby.org</a></small></p>
+        <p class="span4">
+			<a href="http://Try-PHP.org">Try-PHP.org</a> - {{date('Y')}} <br /><small>inspired by <a href="http://tryruby.org/" target="_blank">TryRuby.org</a></small>
+		</p>
+		<p class="span4">
+			<div class="fb-like" data-href="http://try-php.org/" data-send="true" data-width="450" data-show-faces="false"></div>
+		</p>
+		
+		<!--
+		<p>
+				<g:plusone annotation="inline" width="250" href="http://Try-PHP.org"></g:plusone>
+				<script type="text/javascript">
+						(function() {
+							 var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+						po.src = 'https://apis.google.com/js/plusone.js';
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+						})();
+				</script>
+		</p> 
+		-->
       </footer>
 
     </div> <!-- /container -->
@@ -129,6 +147,27 @@
     <script src="/js/bootstrap-carousel.js"></script>
     <script src="/js/bootstrap-typeahead.js"></script>
     <script src="/js/prettify.js"></script>
+	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=143466445705675";
+				fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
+		</script>
+
+		<script type="text/javascript">
+				var _gaq = _gaq || [];
+				_gaq.push(['_setAccount', 'UA-29381470-1']);
+				_gaq.push(['_setDomainName', '.try-php.org']);
+				_gaq.push(['_trackPageview']);
+
+				(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				})();
+		</script>
   </body>
 </html>
-

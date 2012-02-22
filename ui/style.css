@@ -31,6 +31,11 @@ ul.front-ul li
 	background: url( ../images/mre_ads_nav.png ) no-repeat left;
 }
 
+footer p{
+	float:left;
+	margin: 0px 20px;
+}
+
 /*
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,
 p,blockquote,pre,a,abbr,acronym,address,big,code,em,img,
