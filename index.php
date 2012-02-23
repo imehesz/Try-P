@@ -40,6 +40,7 @@ $app->route( 'GET /learn/lesson/@lesson_id', function(){
 	F3::set( 'lesson_next', in_array( ($lesson_id+1), $lessons ) ? '/learn/lesson/' . ($lesson_id+1) : null );
 	F3::set( 'lesson_prev', in_array( ($lesson_id-1), $lessons ) ? '/learn/lesson/' . ($lesson_id-1) : null );
 	F3::set( 'lessons', $lessons );
+	F3::set( 'current_lesson_id', $lesson_id );
 
 	F3::set( 'content', 'learn.html' );
 	echo Template::serve( 'main.html' );
