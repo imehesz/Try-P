@@ -4,9 +4,18 @@
 			<div class="span6">
 				<br />
 				<ul class="front-ul">
-					<li><strong>No</strong> commitment!</li>
-					<li><strong>No</strong> hastle!</li>
-					<li><strong>No</strong> installation!</li>
+				<F3:check if="{{rand(0,100) > 50}}">
+					<F3:true>
+						<li><strong>No</strong> commitment!</li>
+						<li><strong>No</strong> hastle!</li>
+						<li><strong>No</strong> installation!</li>
+					</F3:true>
+					<F3:false>
+						<li><strong>No</strong> LAMP?</li>
+						<li><strong>No</strong> Stack?</li>
+						<li><strong>No</strong> problem!</li>
+					</F3:false>
+				</F3:check>
 					<li>Absolutely <strong style="background-color:#c80e02;color:#fff;padding: 0px 5px;">FREE</strong>!</li>
 				</ul>
 			</div>
