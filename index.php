@@ -5,7 +5,7 @@ require_once( 'config.php' );
 
 $app->set('UI','ui/');
 
-$app->set( 'html_title', 'Try-PHP.org');
+$app->set( 'html_title', 'Try PHP in your browser - Try-PHP.org');
 
 $app->route('GET /',function(){
 	F3::set( 'content', 'home.html' );
