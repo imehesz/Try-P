@@ -3,6 +3,7 @@
 $options = array(
     // which string should represent a tab for indentation
     'tabsize' => 4,
+	'basePath' => 'editor'
 );
 
 /**
@@ -107,12 +108,12 @@ if (isset($_POST['code'])) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <title>Debug Console</title>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-        <script src="jquery-1.7.1.min.js"></script>
-        <script src="ace/ace.js"></script>
-        <script src="ace/mode-php.js"></script>
-        <script src="php-console.js"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo $options['basePath'] ?>/styles.css" />
+        <link rel="stylesheet" type="text/css" href="<?php echo $options['basePath'] ?>/../css/bootstrap.css" />
+        <script src="<?php echo $options['basePath'] ?>/jquery-1.7.1.min.js"></script>
+        <script src="<?php echo $options['basePath'] ?>/ace/ace.js"></script>
+        <script src="<?php echo $options['basePath'] ?>/ace/mode-php.js"></script>
+        <script src="<?php echo $options['basePath'] ?>/php-console.js"></script>
         <script>
             $.console({
                 tabsize: <?php echo json_encode($options['tabsize']) ?>
